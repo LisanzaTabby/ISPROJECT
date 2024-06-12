@@ -7,15 +7,7 @@
 body{
     background: aqua;
 }
-.toppage{
-    padding-bottom: 200px;
-    padding-top: 100px;
-    padding-left: 100px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-   
-}
+
 .pagename{
     color: white;
     text-align: center;
@@ -43,73 +35,35 @@ body{
 .navbar ul a li{
     list-style: none;
 }
-.navbar ul .profile img{
-    height: 80px;
-    width: 80px;
-}
-.navbar ul .username{
-    color: white;
-    font-weight: 600;
-    margin-left: 30px;
-    margin-top: 30px;
-}
-.navbar ul form input{
-    margin-top: 30px;
-    margin-left: 30px;
-    height: 40px;
-    width: 120px;
-    padding: 5px;
-    background: aqua;
-    font-weight: 700;
-    border-radius: 10px;
-    font-size: 20px;
-    text-transform: uppercase;
-}
 .main{
-    padding: 20px;
+    padding: 100px;
 }
-.main h1{
-    text-align: center;
-    text-transform: uppercase;
-    color: rgb(255, 0, 43);
-    margin-bottom: 10px;  
-}
-.main .content{
+.main .stats{
     background: #fff;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+
+}
+.main .stats .container{
+    background-color: rgb(255, 0, 43);
     border-radius: 10px;
-    padding: 50px;
-}
-.main .content table{
-    border: 1px solid black;
-    padding: 10px;
-}
-.main .content table, th, td{
-    border: 1px solid black;
-    border-collapse: collapse;
-}
-.main .content table thead tr{
-    font-weight: 700;
-    text-align: center;
-    text-transform: uppercase;
-    color: rgb(255, 0, 43);
-}
-.main .content table thead tr td{
-    padding: 10px;
-
-}
-.main .content table tbody tr td{
-    padding: 10px;
-
-}
-.main .content table tbody tr td > a {
-    background: rgb(255, 0, 43);
-    padding: 10px;
-    margin: 20px;
-    text-transform: uppercase;
-    text-decoration: none;
+    padding: 30px;
+    margin: 10px;
     color: #fff;
-    font-weight: 600;
-    border-radius: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+}
+.main .stats .container a {
+    text-decoration: none;
+    text-align: center;
+    margin-top: 20px;
+    transition: all 0.5s linear;
+}
+.main .stats .container a:hover{
+    color: aqua;
+    font-size: 1.5em;
 }
 footer{
     position: relative;

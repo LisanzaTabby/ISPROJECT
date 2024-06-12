@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student</title>
-    <link rel="stylesheet" href="{% static 'css/student.css' %}">
+    <link rel="stylesheet" href="{% static 'css/admindash.css' %}">
 </head>
 <body>
     <div class="toppage"style="background: url('{% static 'images/blacklady.jpg' %}'); background-repeat: no-repeat;background-position: center; background-size: cover;">
@@ -23,14 +23,35 @@
     </div>
     <div class="main">
         <div class="content">
-            <form method="post">
-                {% csrf_token %}
-
-                {{form}}
-                <br>
-                
-                <input type="submit" value="Save">
-            </form>
+            <div class="actions">
+                <a href="{% url 'addstudent' %}">Add student</a>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <td>StudentID</td>
+                        <td>Name</td>
+                        <td>Gender</td>
+                        <td>Email</td>
+                        <td>Phone</td>
+                        <td>Date_added</td>
+                        <td></td>
+                    </tr>
+                </thead>
+                {% for student in students %}
+                <tbody>
+                    <tr>
+                        <td>{{ student.id }}</td>
+                        <td>{{ student.firstname }} {{ student.lastname }}</td>
+                        <td>{{student.gender}}</td>
+                        <td>{{ student.email }}</td>
+                        <td>{{ student.phone }}</td>
+                        <td>{{ student.date_added}}</td>
+                        <td><a href="#">View</a></td>
+                    </tr>
+                </tbody>
+                {% endfor %}
+            </table>
         </div>
     <footer>
         <div class="container">

@@ -1,53 +1,49 @@
 <!DOCTYPE html>
 {% load static %}
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student</title>
-    <link rel="stylesheet" href="{% static 'css/student.css' %}">
+    <link rel="stylesheet" href="{% static 'css/finance.css' %}">
+    <title>Finance Page</title>
 </head>
 <body>
-    <div class="toppage"style="background: url('{% static 'images/blacklady.jpg' %}'); background-repeat: no-repeat;background-position: center; background-size: cover;">
-        <div class="pagename">
-            <h1>Scholarship management system</h1>
-        </div>
-        <div class="navbar">
-            <ul>
-                <a href="#"><li>Home</li></a>
-                <a href="#"><li>About</li></a>
-                <a href="#"><li>Contact us</li></a>
-          
-            </ul>
+    <div class="toppage">
+        <div class="toppage"style="padding: 200px;background: url('{% static 'images/blacklady.jpg' %}'); background-repeat: no-repeat;background-position: center; background-size: cover;">
+            <div class="pagename">
+                <h1>Scholarship management system</h1>
+            </div>
+            <div class="navbar">
+                <ul>
+                    <a href="#"><li>Home</li></a>
+                    <a href="#"><li>About</li></a>
+                    <a href="#"><li>Contact us</li></a>
+                    <a href="#"><li>signup</li></a>
+                    <a href="#"><li>Login</li></a>
+                </ul>
+            </div>
         </div>
     </div>
     <div class="main">
-        <div class="content">
-            <table>
-                <thead>
-                    <tr>
-                        <td>StudentID</td>
-                        <td>Name</td>
-                        <td>Email</td>
-                        <td>Phone</td>
-                        <td>Date_added</td>
-                        <td></td>
-                    </tr>
-                </thead>
-                {% for student in students %}
-                <tbody>
-                    <tr>
-                        <td>{{ student.id }}</td>
-                        <td>{{ student.firstname }} {{ student.lastname }}</td>
-                        <td>{{ student.email }}</td>
-                        <td>{{ student.phone }}</td>
-                        <td>{{ student.date_added}}</td>
-                        <td><a href="#">View</a></td>
-                    </tr>
-                </tbody>
-                {% endfor %}
-            </table>
+        <div class="stats">
+            <div class="container">
+                <h3>Total Students</h3>
+                <p>x</p>
+                <a href="#">View</a>
+            </div>
+            <div class="container">
+                <h3>Total Employees</h3>
+                <p>x</p>
+                <a href="#">View</a>
+            </div>
+            <div class="container">
+                <h3>Fund</h3>
+                <p>x</p>
+                <a href="#">View</a>
+            </div>
         </div>
+    </div>
     <footer>
         <div class="container">
             <div class="aboutussec">
@@ -107,6 +103,5 @@
     <div class="copyrighttext">
         <p>Copyright Scholarship Management System|| All Rights Reserved</p>
     </div>
-
 </body>
 </html>
