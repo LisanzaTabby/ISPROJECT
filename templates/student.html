@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student</title>
-    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'css/student.css' %}">
 </head>
 <body>
     <div class="toppage"style="background: url('{% static 'images/blacklady.jpg' %}'); background-repeat: no-repeat;background-position: center; background-size: cover;">
@@ -22,26 +22,32 @@
         </div>
     </div>
     <div class="main">
-       <div class="studentinfo">
-        <h5>Student Information:</h5>
-        <table>
-            <th>Name </th>
-            <th>Phone </th>
-            <th>Email </th>
-            <th>Gender </th>
-
-        </table>
-        
-        
-       </div>
-       <div class="schoolinfo">
-        <h5>School Information</h5>
-        <p>School Name: </p>
-        <p>Class/Form: </p>
-        
-       </div>
-
-    </div>
+        <div class="content">
+            <table>
+                <thead>
+                    <tr>
+                        <td>StudentID</td>
+                        <td>Name</td>
+                        <td>Email</td>
+                        <td>Phone</td>
+                        <td>Date_added</td>
+                        <td></td>
+                    </tr>
+                </thead>
+                {% for student in students %}
+                <tbody>
+                    <tr>
+                        <td>{{ student.id }}</td>
+                        <td>{{ student.firstname }} {{ student.lastname }}</td>
+                        <td>{{ student.email }}</td>
+                        <td>{{ student.phone }}</td>
+                        <td>{{ student.date_added}}</td>
+                        <td><a href="#">View</a></td>
+                    </tr>
+                </tbody>
+                {% endfor %}
+            </table>
+        </div>
     <footer>
         <div class="container">
             <div class="aboutussec">

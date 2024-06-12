@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-class student(models.Model):
+class Student(models.Model):
     GENDER = (
         ('Female', 'Female'),
         ('Male', 'Male'),
@@ -11,6 +11,7 @@ class student(models.Model):
     email = models.CharField(max_length=100)
     phone = models.IntegerField()
     gender = models.CharField(max_length=100, choices=GENDER)
+    date_added = models.DateTimeField(auto_now_add = True)
     
     def __str__(self):
         return f'{self.firstname} {self.lastname}'
