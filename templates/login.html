@@ -35,6 +35,10 @@
             border-radius: 10px;
 
         }
+        form .quizsec{
+            display: flex;
+            font-weight: 700;
+        }
     </style>
 </head>
 <body>
@@ -66,6 +70,10 @@
             <input type="password"placeholder="Your Password"name="password">
 
             <input type="submit" value="LOGIN">
+            <div class="quizsec">
+                Don't have an account? <a href="{% url 'signup' %}">Signup</a>
+
+            </div>
             {% for message in messages %}
             <p>{{message}}</p>
             {% endfor %}

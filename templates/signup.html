@@ -31,6 +31,11 @@
             border-radius: 10px;
 
         }
+        form .quizsec{
+            align-items: center;
+            display: flex;
+            font-weight: 700;
+        }
     </style>
 </head>
 <body>
@@ -67,7 +72,11 @@
             <div class="label"> {{form.password2.label}}</div>
             {{form.password2}}
             <br>
-            <input type="submit" value="LOGIN">
+            <input type="submit" value="Signup">
+            <div class="quizsec">
+                Already have an account?<a href="{% url 'login' %}">Login</a>
+
+            </div>
         </form>
         </div>
     </div>

@@ -3,6 +3,7 @@ from .models import *
 from .forms import StudentForm,CreateUserForm
 from django.contrib import messages
 from django.contrib.auth import login,logout,authenticate
+from .filter import StudentFilter
 # Create your views here.
 def index(request):
     return render(request, 'index.html')
@@ -31,7 +32,9 @@ def loginView(request):
     return render(request, 'login.html',context)
 def admindash(request):
     students = Student.objects.all()
-    context= {'students':students}
+    myFilter = StudentFilter(request.POST, queryset=students)
+    students = myFilter.qs
+    context= {'students':students, 'myFilter':myFilter}
     return render(request, 'admindash.html', context)
 def add_student(request):
     form = StudentForm()
