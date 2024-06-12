@@ -4,33 +4,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HomePage</title>
-    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="{% static 'css/trustee.css' %}">
+    <title>Signup Page</title>
+    <style>
+        form h3{
+            text-align: center ;
+            margin-bottom: 20px;
+        }
+        form{
+            background: white;
+            display: flex;
+            padding: 30px;
+            flex-direction: column;
+            text-transform: uppercase;
+        }
+        form .label{
+            font-weight: 700;
+        }
+        form input[type=submit]{
+            background: rgb(255, 0, 43);
+            font-weight: 700;
+            color: white;
+            font-size: 20px;
+            padding: 10px;
+            border: 0px;
+            border-radius: 10px;
+
+        }
+    </style>
 </head>
 <body>
-    <div class="toppage"style="background: url('{% static 'images/blacklady.jpg' %}'); background-repeat: no-repeat;background-position: center; background-size: cover;">
-        <div class="pagename">
-            <h1>Scholarship management system</h1>
-        </div>
-        <div class="navbar">
-            <ul>
-                <a href="#"><li>Home</li></a>
-                <a href="#"><li>About</li></a>
-                <a href="#"><li>Contact us</li></a>
-                <a href="{% url 'signup' %}"><li>signup</li></a>
-                <a href="{% url 'login' %}"><li>Login</li></a>
-                
-
-
-            </ul>
+    <div class="toppage">
+        <div class="toppage"style="padding: 200px;background: url('{% static 'images/blacklady.jpg' %}'); background-repeat: no-repeat;background-position: center; background-size: cover;">
+            <div class="pagename">
+                <h1>Scholarship management system</h1>
+            </div>
+            <div class="navbar">
+                <ul>
+                    <a href="#"><li>Home</li></a>
+                    <a href="#"><li>About</li></a>
+                    <a href="#"><li>Contact us</li></a>
+                    <a href="#"><li>signup</li></a>
+                    <a href="{% url 'login' %}"><li>Login</li></a>
+                </ul>
+            </div>
         </div>
     </div>
     <div class="main">
-        <div class="content">
-            <p>welcome to LOTUS Scholarship Management System,   </p>&nbsp;&nbsp;
-            <p> "We believe in diversity and inclusion. Explore scholarships that celebrate your unique background, talents, and perspectives."</p>
+        <form method="post">
+            <h3>Signup</h3>
+            {{ form.errors }}
+            {% csrf_token %}
+            <div class="label"> {{form.username.label}} </div>
+            {{form.username}}
+            <br>
+            <div class="label"> {{form.email.label}}</div>
+            {{form.email}}
+            <br>
+            <div class="label"> {{form.password1.label}}  </div>
+            {{form.password1}}
+            <br>
+            <div class="label"> {{form.password2.label}}</div>
+            {{form.password2}}
+            <br>
+            <input type="submit" value="LOGIN">
+        </form>
         </div>
-
     </div>
     <footer>
         <div class="container">
@@ -91,6 +130,5 @@
     <div class="copyrighttext">
         <p>Copyright Scholarship Management System|| All Rights Reserved</p>
     </div>
-
 </body>
 </html>

@@ -7,4 +7,7 @@ urlpatterns = [
     path('trustee', views.trusteeView, name='trustee'),
     path('dataentry', views.DataEntryView, name='dataentry'),
     path('finance', views.FinanceView, name='finance'),
+    path('login', views.loginView, name='login'),
+    path('signup', views.signupView, name='signup'),
+    path('logout', views.logoutView, name='logout'),
 ]

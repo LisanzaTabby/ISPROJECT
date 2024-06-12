@@ -6,6 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student</title>
     <link rel="stylesheet" href="{% static 'css/admindash.css' %}">
+    <style>
+        form input[type=search]{
+            background: blue;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            border: 0px;
+            border-radius: 10px;
+            color: white;
+            text-align: center;
+            font-size: 20px;
+            font-weight: 700;
+        }
+    </style>
 </head>
 <body>
     <div class="toppage"style="background: url('{% static 'images/blacklady.jpg' %}'); background-repeat: no-repeat;background-position: center; background-size: cover;">
@@ -17,13 +30,19 @@
                 <a href="#"><li>Home</li></a>
                 <a href="#"><li>About</li></a>
                 <a href="#"><li>Contact us</li></a>
+                <li style="list-style: none;"><img src="{% static 'images/user.png' %}"style="height=80px;width: 80px;"><span style="color: white;font-weight: 700; font-size: 30px;">{{request.user}}</span></li>
+                <a href="{% url 'logout' %}">logout</a>
+
           
             </ul>
         </div>
     </div>
     <div class="main">
         <div class="content">
-            <div class="actions">
+            <form method="post">
+                <input type="search" name=""value="Filter">
+            </form>
+            <div class="actions">                
                 <a href="{% url 'addstudent' %}">Add student</a>
             </div>
             <table>

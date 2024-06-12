@@ -43,7 +43,7 @@ body{
 .navbar ul a li{
     list-style: none;
 }
-.navbar ul .profile img{
+.navbar ul li img{
     height: 80px;
     width: 80px;
 }
